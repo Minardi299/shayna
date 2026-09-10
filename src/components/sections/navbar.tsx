@@ -15,7 +15,7 @@ import { SITE } from "@/lib/site"
 
 const LINKS = [
   { to: "/", label: "Home" },
-  { to: "/services", label: "Services" },
+  { to: "/services/", label: "Services" },
 ]
 
 export function Navbar() {

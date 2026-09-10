@@ -77,9 +77,9 @@ export function HomeHero() {
           data-reveal
           className="mb-10 max-w-[430px] text-[17px] leading-[1.65] font-light text-muted-foreground [text-wrap:pretty]"
         >
-          A small studio where every set is finished by a person, not a
-          production line. Precise manicures, deep-relax spa pedicures, and gel
-          that actually lasts.
+          A small Ahwatukee studio where every set is finished by a person, not
+          a production line. Precise manicures, deep-relax spa pedicures, and
+          gel that actually lasts.
         </p>
 
         <div

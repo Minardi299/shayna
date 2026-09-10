@@ -48,7 +48,7 @@ export function HomeServices() {
       <div className="mt-16 flex justify-center">
         <span className="relative inline-block">
           <Link
-            to="/services"
+            to="/services/"
             className="border-b border-foreground/30 pb-1 font-serif text-2xl hover:border-brand-deep hover:text-brand-soft"
           >
             See the full price list

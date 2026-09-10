@@ -7,6 +7,10 @@ if (!bookingUrl) {
 
 export const SITE = {
   name: "Shayna's Nails & Spa",
+  url: (import.meta.env.VITE_SITE_URL ?? "https://shayna.starb.ca").replace(
+    /\/+$/,
+    ""
+  ),
   phone: "(480) 704-1245",
   phoneHref: "tel:+14807041245",
   bookingUrl,

@@ -18,6 +18,12 @@ export function Visit() {
           >
             Find us
           </h2>
+          <p
+            data-reveal
+            className="mb-10 max-w-[360px] text-base leading-[1.7] font-light text-muted-foreground [text-wrap:pretty]"
+          >
+            Our studio is in Ahwatukee, on E. Chandler Blvd in Phoenix.
+          </p>
           <div className="mb-12">
             <span className="relative inline-block">
               <a
