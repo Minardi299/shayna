@@ -14,15 +14,19 @@ The design comes from the "Shayna Nails Spa" and "Shayna Services" Claude Design
 
 ## Configuration
 
-The site reads one environment variable, `VITE_BOOKING_URL` — the online booking link that every "Book" button points to. The build fails if it is not set.
+The site reads two environment variables. The build fails if either is not set.
 
-Set it in a `.env` file at the project root (see `.env.example`):
+- `VITE_BOOKING_URL` — the online booking link that every "Book" button points to.
+- `VITE_SERVICES_URL` — the services API. The services page fetches its price list from here at build time.
+
+Set them in a `.env` file at the project root (see `.env.example`):
 
 ```sh
 VITE_BOOKING_URL=https://your-booking-link
+VITE_SERVICES_URL=https://your-services-api/menu
 ```
 
-To change the booking link later, edit `.env`, or set `VITE_BOOKING_URL` in the deploy environment (a real environment variable overrides the `.env` file).
+To change a value later, edit `.env`, or set the variable in the deploy environment (a real environment variable overrides the `.env` file). The GitHub Actions builds read both from repository variables (`vars.VITE_BOOKING_URL`, `vars.VITE_SERVICES_URL`).
 
 ## Build
 
@@ -46,14 +50,14 @@ Deploy `build/client/` as the static root of any web host. Map the host's 404 ha
 - `src/components/sections/` — one file per page section. Home: home hero, marquee, home services, awards, gallery, reviews, contact, visit. Shared: navbar, footer. Services: services hero, services list, CTA.
 - `src/components/book-button.tsx` — the shared "Book us" pill button. `src/components/scribble.tsx` — the hand-drawn circle around the phone number.
 - `src/components/ui/` — components from the shadcn registry (button, card, sheet, separator, carousel, field, input, textarea). Add more with `pnpm dlx shadcn@latest add <name>`.
-- `src/lib/site.ts` — the single source of business data: name, phone, address, hours, links, the price list, the home service cards, the hero slides, and the gallery.
+- `src/lib/site.ts` — the single source of business data: name, phone, address, hours, links, the home service cards, the hero slides, and the gallery. (The price list comes from the API, not this file.)
 - `src/lib/use-reveal.ts` — the scroll-reveal hook. It runs on each route and reveals every element marked `data-reveal` or `data-draw` as it scrolls into view.
 - `src/index.css` — the styling source of truth. It holds two color surfaces as CSS variables: the cream page (`:root`) and the ink header, footer, menu, and reviews band (`.dark`). Every shadcn `Button` reads these tokens, so a button turns cream on the ink surface and ink on the cream surface with no extra code.
 - `public/images/` — photos from the live site, resized. `src/root.tsx` — the HTML shell, favicon, and font links.
 
 ### Content notes
 
-- The price list shows a cash price and a card price. The card price is the cash price plus 3%.
+- The services page fetches its categories, prices, and durations from the `VITE_SERVICES_URL` API at build time (a React Router route loader), so the price list is not hardcoded. Rebuild to pick up API changes.
 - The reviews band shows the studio's real Google reviews as on-brand cards. The text is a snapshot in `src/lib/site.ts` (`REVIEWS` and `REVIEW_STATS`) — refresh it from the Google listing when you want newer reviews. See "Live Google reviews" below for auto-updating options.
 - The contact form checks the fields and shows a thank-you message, but it does not send anything yet. It needs a backend — a form service (for example Formspree), a serverless function, or a `mailto:` action. Until then it is a demo.
 - The photos come from the live site and were resized to keep the page light. Replace them in `public/images/` with the studio's own files when you have them.
