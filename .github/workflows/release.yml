@@ -33,7 +33,6 @@ jobs:
         run: pnpm build
         env:
           VITE_BOOKING_URL: ${{ vars.VITE_BOOKING_URL }}
-          VITE_SERVICES_URL: ${{ vars.VITE_SERVICES_URL }}
           VITE_SITE_URL: ${{ vars.VITE_SITE_URL }}
 
       - name: Package the site

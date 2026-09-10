@@ -16,4 +16,4 @@ RUN pnpm build
 FROM nginx:alpine
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/build/client /usr/share/nginx/html
-EXPOSE 80
+EXPOSE 8080

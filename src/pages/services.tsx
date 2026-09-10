@@ -76,12 +76,9 @@ export function meta({ data }: { data?: { categories: MenuCategory[] } }) {
 }
 
 export async function loader() {
-  const url = import.meta.env.VITE_SERVICES_URL
-  if (!url) {
-    throw new Error(
-      "VITE_SERVICES_URL is not set. Add it to your .env file (see .env.example)."
-    )
-  }
+  const url =
+    import.meta.env.VITE_SERVICES_URL ||
+    "https://shaynanailsaz.magsoft.us/api/menu"
   const res = await fetch(url)
   if (!res.ok) {
     throw new Error(`Could not load services from ${url} (HTTP ${res.status}).`)

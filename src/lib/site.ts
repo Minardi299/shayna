@@ -1,13 +1,10 @@
-const bookingUrl = import.meta.env.VITE_BOOKING_URL
-if (!bookingUrl) {
-  throw new Error(
-    "VITE_BOOKING_URL is not set. Add it to your .env file (see .env.example)."
-  )
-}
+const bookingUrl =
+  import.meta.env.VITE_BOOKING_URL ||
+  "https://shaynanailsaz.magsoft.us/t/c/db3a485714da440ea0565330404ed592"
 
 export const SITE = {
   name: "Shayna's Nails & Spa",
-  url: (import.meta.env.VITE_SITE_URL ?? "https://shayna.starb.ca").replace(
+  url: (import.meta.env.VITE_SITE_URL || "https://shayna.starb.ca").replace(
     /\/+$/,
     ""
   ),
