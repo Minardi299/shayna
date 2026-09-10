@@ -5,6 +5,8 @@ RUN corepack enable
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 COPY . .
+ARG VITE_BOOKING_URL
+ENV VITE_BOOKING_URL=$VITE_BOOKING_URL
 RUN pnpm build
 
 FROM nginx:alpine

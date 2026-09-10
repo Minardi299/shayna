@@ -27,6 +27,8 @@ jobs:
 
       - name: Build static site
         run: pnpm build
+        env:
+          VITE_BOOKING_URL: ${{ vars.VITE_BOOKING_URL }}
 
       - name: Upload static site
         uses: actions/upload-artifact@v4
