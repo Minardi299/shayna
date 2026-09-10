@@ -15,10 +15,11 @@ export function HomeServices() {
       </h2>
 
       <div className="grid gap-[clamp(18px,2.5vw,26px)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,268px),1fr))]">
-        {SERVICE_TEASERS.map((s) => (
+        {SERVICE_TEASERS.map((s, i) => (
           <div
             key={s.title}
             data-reveal
+            style={{ transitionDelay: `${i * 70}ms` }}
             className="overflow-hidden rounded-2xl border border-border bg-card"
           >
             <div className="aspect-[4/3] overflow-hidden bg-muted">

@@ -55,7 +55,7 @@ export function Contact() {
 
       <div>
         {sent ? (
-          <div className="rounded-2xl border border-border bg-card p-9">
+          <div className="rounded-2xl border border-border bg-card p-9 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] starting:translate-y-2 starting:scale-[0.98] starting:opacity-0 motion-reduce:transition-none">
             <div className="mb-4 font-script text-3xl">Thank you</div>
             <p className="mb-6 text-base leading-[1.7] font-light text-muted-foreground">
               Your message is on its way to the studio. We will reply to the

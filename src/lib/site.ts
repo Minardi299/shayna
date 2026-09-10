@@ -1,8 +1,15 @@
+const bookingUrl = import.meta.env.VITE_BOOKING_URL
+if (!bookingUrl) {
+  throw new Error(
+    "VITE_BOOKING_URL is not set. Add it to your .env file (see .env.example)."
+  )
+}
+
 export const SITE = {
   name: "Shayna's Nails & Spa",
   phone: "(480) 704-1245",
   phoneHref: "tel:+14807041245",
-  bookingUrl: "https://shaynanailsaz.magsoft.us/book",
+  bookingUrl,
   addressLines: ["4221 E. Chandler Blvd #B-121", "Phoenix, AZ 85048"],
   mapsUrl:
     "https://maps.google.com/?q=4221+E+Chandler+Blvd+%23B-121,+Phoenix,+AZ+85048",

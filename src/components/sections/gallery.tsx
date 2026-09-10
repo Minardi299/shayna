@@ -23,13 +23,13 @@ export function Gallery() {
             target="_blank"
             rel="noopener noreferrer"
             data-reveal
-            className="mb-4 block break-inside-avoid overflow-hidden rounded-xl bg-muted"
+            className="group mb-4 block break-inside-avoid overflow-hidden rounded-xl bg-muted"
           >
             <img
               src={img.src}
               alt={img.alt}
               loading="lazy"
-              className="h-auto w-full"
+              className="h-auto w-full transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             />
           </a>
         ))}

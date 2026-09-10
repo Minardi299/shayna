@@ -12,6 +12,18 @@ The design comes from the "Shayna Nails Spa" and "Shayna Services" Claude Design
 2. Install the dependencies: `pnpm install`
 3. Start the dev server: `pnpm dev`
 
+## Configuration
+
+The site reads one environment variable, `VITE_BOOKING_URL` — the online booking link that every "Book" button points to. The build fails if it is not set.
+
+Set it in a `.env` file at the project root (see `.env.example`):
+
+```sh
+VITE_BOOKING_URL=https://your-booking-link
+```
+
+To change the booking link later, edit `.env`, or set `VITE_BOOKING_URL` in the deploy environment (a real environment variable overrides the `.env` file).
+
 ## Build
 
 Run `pnpm build`. The static site is written to `build/client/`:
