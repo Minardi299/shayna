@@ -117,4 +117,5 @@ export const GALLERY: { src: string; alt: string }[] = [
   { src: "/images/gallery/g06.jpg", alt: "Nail work at Shayna's Nails & Spa" },
   { src: "/images/gallery/g07.jpg", alt: "Nail work at Shayna's Nails & Spa" },
   { src: "/images/gallery/g08.jpg", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g09.jpg", alt: "Nail work at Shayna's Nails & Spa" },
 ]
