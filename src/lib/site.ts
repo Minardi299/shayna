@@ -109,19 +109,12 @@ export const SERVICE_TEASERS: ServiceTeaser[] = [
 ]
 
 export const GALLERY: { src: string; alt: string }[] = [
-  { src: "/images/gallery/g01.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g02.jpg", alt: "Gel french manicure" },
-  { src: "/images/gallery/g03.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g04.jpg", alt: "Pink and white full set" },
-  { src: "/images/gallery/g05.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g06.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g07.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g08.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g09.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g10.jpg", alt: "Manicure and pedicure" },
-  { src: "/images/gallery/g11.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g12.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g13.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g14.jpg", alt: "Nail work" },
-  { src: "/images/gallery/g15.jpg", alt: "Nail work" },
+  { src: "/images/gallery/g01.jpg", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g02.jpg", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g03.jpg", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g04.jpg", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g05.jpg", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g06.jpg", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g07.jpg", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g08.jpg", alt: "Nail work at Shayna's Nails & Spa" },
 ]
