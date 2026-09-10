@@ -6,6 +6,7 @@ export function Scribble({ className }: { className?: string }) {
       aria-hidden="true"
       className={className}
     >
+      {/* Known issue: this draw stroke does not show on iOS Safari — it ignores pathLength, so the dash of 1 renders as a ~1px dotted (invisible) line. */}
       <path
         data-draw
         pathLength={1}
