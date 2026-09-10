@@ -18,26 +18,6 @@ export function Footer() {
             alt={SITE.name}
             className="h-[76px] w-auto"
           />
-          <div className="flex gap-4">
-            <a
-              href={SITE.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className={link}
-            >
-              <InstagramIcon className="size-5" />
-            </a>
-            <a
-              href={SITE.facebookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className={link}
-            >
-              <FacebookIcon className="size-5" />
-            </a>
-          </div>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -82,6 +62,26 @@ export function Footer() {
           <Link to="/privacy" className={link}>
             Privacy Policy
           </Link>
+          <div className="mt-2 flex gap-4">
+            <a
+              href={SITE.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className={link}
+            >
+              <InstagramIcon className="size-5" />
+            </a>
+            <a
+              href={SITE.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className={link}
+            >
+              <FacebookIcon className="size-5" />
+            </a>
+          </div>
         </div>
       </div>
 

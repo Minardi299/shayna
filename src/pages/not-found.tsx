@@ -15,7 +15,7 @@ export default function NotFoundPage() {
       <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
         <Button
           nativeButton={false}
-          className="h-auto rounded-full px-8 py-4 text-[11.5px] font-normal tracking-[0.2em] uppercase hover:bg-brand hover:text-ink"
+          className="h-auto rounded-full border border-primary px-8 py-4 text-[11.5px] font-normal tracking-[0.2em] uppercase hover:bg-primary-foreground hover:text-primary"
           render={<Link to="/" />}
         >
           Back to services

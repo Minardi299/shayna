@@ -2,7 +2,7 @@ export const SITE = {
   name: "Shayna's Nails & Spa",
   phone: "(480) 704-1245",
   phoneHref: "tel:+14807041245",
-  bookingUrl: "https://abcsalon.net/feedback/appointment?appid=uqOm2VZ",
+  bookingUrl: "https://shaynanailsaz.magsoft.us/book",
   addressLines: ["4221 E. Chandler Blvd #B-121", "Phoenix, AZ 85048"],
   mapsUrl:
     "https://maps.google.com/?q=4221+E+Chandler+Blvd+%23B-121,+Phoenix,+AZ+85048",

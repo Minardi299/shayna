@@ -120,7 +120,7 @@ export function Contact() {
 
               <Button
                 type="submit"
-                className="h-auto w-fit rounded-full px-10 py-[18px] text-[12px] font-normal tracking-[0.22em] uppercase hover:bg-brand hover:text-ink"
+                className="h-auto w-fit rounded-full border border-primary px-10 py-[18px] text-[12px] font-normal tracking-[0.22em] uppercase hover:bg-primary-foreground hover:text-primary"
               >
                 Send message
               </Button>
