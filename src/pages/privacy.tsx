@@ -40,7 +40,7 @@ export default function PrivacyPage() {
         <H>1. Information We Collect</H>
         <h3 className="font-serif text-xl italic">1.1 Personal Information</h3>
         <p>
-          When you use ABC Salon System at <strong>{SITE.name}</strong>, we may
+          When you use magsoft.us at <strong>{SITE.name}</strong>, we may
           collect personal information that you voluntarily provide, such as your
           name, email address, phone number, and any other information you choose
           to share with us.
@@ -59,8 +59,8 @@ export default function PrivacyPage() {
         </p>
         <ul className="flex list-disc flex-col gap-2 pl-6">
           <li>
-            To provide you with access to the features and functionalities of ABC
-            Salon System at <strong>{SITE.name}</strong>.
+            To provide you with access to the features and functionalities of
+            magsoft.us at <strong>{SITE.name}</strong>.
           </li>
           <li>
             To communicate with you and respond to your inquiries, feedback, or
@@ -109,8 +109,8 @@ export default function PrivacyPage() {
         <H>7. Changes to this Privacy Policy</H>
         <p>
           We may update this Privacy Policy from time to time. Any changes will be
-          effective when we post the revised Privacy Policy within the ABC Salon
-          System app. We encourage you to review this Privacy Policy periodically.
+          effective when we post the revised Privacy Policy within the magsoft.us
+          app. We encourage you to review this Privacy Policy periodically.
         </p>
 
         <H>8. Your Choices</H>

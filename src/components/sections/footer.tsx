@@ -56,10 +56,10 @@ export function Footer() {
           <Link to="/" className={link}>
             Home
           </Link>
-          <Link to="/services" className={link}>
+          <Link to="/services/" className={link}>
             Services
           </Link>
-          <Link to="/privacy" className={link}>
+          <Link to="/privacy/" className={link}>
             Privacy Policy
           </Link>
           <div className="mt-2 flex gap-4">

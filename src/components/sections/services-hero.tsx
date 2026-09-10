@@ -7,6 +7,13 @@ export function ServicesHero() {
       >
         Our services
       </h1>
+      <p
+        data-reveal
+        className="mt-5 max-w-[46ch] text-[17px] leading-[1.6] font-light text-muted-foreground [text-wrap:pretty]"
+      >
+        The full price list for our nail salon in Ahwatukee, Phoenix — every
+        manicure, pedicure, and combo, with prices and times.
+      </p>
     </section>
   )
 }
