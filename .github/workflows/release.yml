@@ -1,0 +1,69 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag for the release (for example v0.2.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build static site
+        run: pnpm build
+
+      - name: Package the site
+        run: |
+          if [ "${{ github.ref_type }}" = "tag" ]; then
+            TAG="${{ github.ref_name }}"
+          elif [ -n "${{ github.event.inputs.tag }}" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+          else
+            TAG="latest"
+          fi
+          echo "TAG=$TAG" >> "$GITHUB_ENV"
+          cd build/client
+          zip -r "../../shayna-website-$TAG.zip" .
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$TAG" = "latest" ]; then
+            gh release delete latest --repo "${{ github.repository }}" --yes --cleanup-tag || true
+            TITLE="Shayna website (latest build, ${GITHUB_SHA::7})"
+          else
+            TITLE="Shayna website $TAG"
+          fi
+          gh release create "$TAG" "shayna-website-$TAG.zip" \
+            --repo "${{ github.repository }}" \
+            --target "$GITHUB_SHA" \
+            --title "$TITLE" \
+            --notes "Static build of the site (plain HTML, CSS, and JS).
+
+          To run it locally:
+          1. Download and unzip \`shayna-website-$TAG.zip\`.
+          2. Serve the folder with any static server, for example: \`python3 -m http.server 8000\` or \`npx serve\`.
+          3. Open http://localhost:8000 in a browser.
+
+          To deploy, upload the folder contents to any static web host. Map the host's 404 page to \`404.html\`. See the README for host-specific steps."
