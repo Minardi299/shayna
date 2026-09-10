@@ -1,5 +1,7 @@
 import { GALLERY, SITE } from "@/lib/site"
 
+const ASPECTS = ["1 / 1", "4 / 5", "3 / 4", "2 / 3", "4 / 5", "3 / 4"]
+
 export function Gallery() {
   return (
     <section id="gallery" className="shell pt-[clamp(72px,11vw,110px)] pb-10">
@@ -16,7 +18,7 @@ export function Gallery() {
       </div>
 
       <div className="[column-gap:14px] [columns:clamp(150px,44vw,250px)]">
-        {GALLERY.map((img) => (
+        {GALLERY.map((img, i) => (
           <a
             key={img.src}
             href={img.src}
@@ -29,7 +31,8 @@ export function Gallery() {
               src={img.src}
               alt={img.alt}
               loading="lazy"
-              className="h-auto w-full transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+              style={{ aspectRatio: ASPECTS[i % ASPECTS.length] }}
+              className="w-full object-cover transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
             />
           </a>
         ))}
