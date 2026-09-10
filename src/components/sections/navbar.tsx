@@ -75,7 +75,10 @@ export function Navbar() {
               ))}
               <BookButton className="mt-6 w-full py-4" />
               <span className="mt-4 text-center font-script text-xl text-brand-soft">
-                or call {SITE.phone}
+                or call{" "}
+                <a href={SITE.phoneHref} className="py-1 underline-offset-4 hover:underline">
+                  {SITE.phone}
+                </a>
               </span>
             </nav>
           </SheetContent>
