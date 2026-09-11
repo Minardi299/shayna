@@ -10,20 +10,14 @@ export function Visit() {
       id="visit"
       className="border-t border-border bg-sand py-[clamp(68px,10vw,100px)]"
     >
-      <div className="shell grid gap-[clamp(44px,7vw,64px)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))]">
+      <div className="shell grid gap-[clamp(44px,7vw,64px)] md:grid-cols-2">
         <div>
           <h2
             data-reveal
-            className="mb-10 font-serif text-[clamp(34px,8vw,66px)] leading-[1.02] font-light tracking-[-0.015em]"
+            className="mb-12 font-serif text-[clamp(34px,8vw,66px)] leading-[1.02] font-light tracking-[-0.015em]"
           >
             Find us
           </h2>
-          <p
-            data-reveal
-            className="mb-10 max-w-[360px] text-base leading-[1.7] font-light text-muted-foreground [text-wrap:pretty]"
-          >
-            Our studio is in Ahwatukee, on E. Chandler Blvd in Phoenix.
-          </p>
           <div className="mb-12">
             <span className="relative inline-block">
               <a
@@ -52,7 +46,7 @@ export function Visit() {
               {SITE.addressLines[1]}
             </a>
           </div>
-          <div className="border-b border-border pb-6">
+          <div>
             <div className={label}>Hours</div>
             {SITE.hours.map((h) => (
               <div
@@ -64,25 +58,20 @@ export function Visit() {
               </div>
             ))}
           </div>
-          <div>
-            <div className={label}>Follow</div>
-            <div className="flex gap-6 font-serif text-xl">
-              <a
-                href={SITE.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-              <a
-                href={SITE.facebookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </a>
-            </div>
-          </div>
+        </div>
+
+        <div
+          data-reveal
+          className="overflow-hidden rounded-3xl md:col-span-2"
+        >
+          <iframe
+            title="Map to Shayna's Nails & Spa"
+            src={SITE.mapsEmbedUrl}
+            className="block h-[clamp(320px,45vw,540px)] w-full border-0"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </div>
     </section>

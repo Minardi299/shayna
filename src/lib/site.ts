@@ -14,6 +14,8 @@ export const SITE = {
   addressLines: ["4221 E. Chandler Blvd #B-121", "Phoenix, AZ 85048"],
   mapsUrl:
     "https://maps.google.com/?q=4221+E+Chandler+Blvd+%23B-121,+Phoenix,+AZ+85048",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=4221+E+Chandler+Blvd+%23B-121,+Phoenix,+AZ+85048&output=embed",
   hours: [
     { days: "Mon – Sat", time: "9:00 am – 7:00 pm" },
     { days: "Sunday", time: "10:00 am – 5:00 pm" },
@@ -110,15 +112,15 @@ export const SERVICE_TEASERS: ServiceTeaser[] = [
 ]
 
 export const GALLERY: { src: string; alt: string }[] = [
-  { src: "/images/gallery/g01.jpg", alt: "Nail work at Shayna's Nails & Spa" },
-  { src: "/images/gallery/g02.jpg", alt: "Nail work at Shayna's Nails & Spa" },
-  { src: "/images/gallery/g03.jpg", alt: "Nail work at Shayna's Nails & Spa" },
-  { src: "/images/gallery/g04.jpg", alt: "Nail work at Shayna's Nails & Spa" },
-  { src: "/images/gallery/g05.jpg", alt: "Nail work at Shayna's Nails & Spa" },
-  { src: "/images/gallery/g06.jpg", alt: "Nail work at Shayna's Nails & Spa" },
-  { src: "/images/gallery/g07.jpg", alt: "Nail work at Shayna's Nails & Spa" },
-  { src: "/images/gallery/g08.jpg", alt: "Nail work at Shayna's Nails & Spa" },
-  { src: "/images/gallery/g09.jpg", alt: "Nail work at Shayna's Nails & Spa" },
-  { src: "/images/gallery/g10.jpg", alt: "Nail work at Shayna's Nails & Spa" },
-  { src: "/images/gallery/g11.jpg", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g01.webp", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g02.webp", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g03.webp", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g04.webp", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g05.webp", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g06.webp", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g07.webp", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g08.webp", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g09.webp", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g10.webp", alt: "Nail work at Shayna's Nails & Spa" },
+  { src: "/images/gallery/g11.webp", alt: "Nail work at Shayna's Nails & Spa" },
 ]
