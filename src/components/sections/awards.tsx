@@ -7,7 +7,7 @@ export function Awards() {
       >
         <img
           src="/images/award.jpg"
-          alt="Award for Shayna's Nails & Spa"
+          alt="Best Nail Salon, 5th year in a row — Ahwatukee Foothills News Best of 2023, 1st Place"
           loading="lazy"
           className="h-auto w-full"
         />

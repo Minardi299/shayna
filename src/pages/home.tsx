@@ -1,5 +1,4 @@
 import { Awards } from "@/components/sections/awards"
-import { Contact } from "@/components/sections/contact"
 import { Gallery } from "@/components/sections/gallery"
 import { HomeHero } from "@/components/sections/home-hero"
 import { HomeServices } from "@/components/sections/home-services"
@@ -78,7 +77,6 @@ export default function HomePage() {
       <Awards />
       <Gallery />
       <Reviews />
-      <Contact />
       <Visit />
     </>
   )
