@@ -5,6 +5,14 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter()],
+  server: {
+    proxy: {
+      '/api/menu': {
+        target: 'https://shaynanailsaz.magsoft.us',
+        changeOrigin: true,
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),

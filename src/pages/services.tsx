@@ -75,10 +75,7 @@ export function meta({ data }: { data?: { categories: MenuCategory[] } }) {
   ]
 }
 
-export async function loader() {
-  const url =
-    import.meta.env.VITE_SERVICES_URL ||
-    "https://shaynanailsaz.magsoft.us/api/menu"
+async function fetchMenu(url: string) {
   const res = await fetch(url)
   if (!res.ok) {
     throw new Error(`Could not load services from ${url} (HTTP ${res.status}).`)
@@ -90,8 +87,29 @@ export async function loader() {
   return { categories }
 }
 
+export function loader() {
+  return fetchMenu(
+    import.meta.env.VITE_SERVICES_URL ||
+      "https://shaynanailsaz.magsoft.us/api/menu"
+  )
+}
+
+// /api/menu is proxied to the menu API by nginx (prod) and Vite (dev); the API has no CORS headers.
+export async function clientLoader({
+  serverLoader,
+}: {
+  serverLoader: () => ReturnType<typeof loader>
+}) {
+  try {
+    return await fetchMenu("/api/menu")
+  } catch {
+    return serverLoader()
+  }
+}
+clientLoader.hydrate = true as const
+
 export default function ServicesPage() {
-  const { categories } = useLoaderData<typeof loader>()
+  const { categories } = useLoaderData<typeof clientLoader>()
   return (
     <>
       <ServicesHero />
