@@ -14,6 +14,12 @@ ENV VITE_SITE_URL=$VITE_SITE_URL
 RUN pnpm build
 
 FROM nginx:alpine
-COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+# Build values become the defaults; the container environment overrides them at start.
+ARG VITE_BOOKING_URL
+ENV VITE_BOOKING_URL=$VITE_BOOKING_URL
+ARG VITE_SERVICES_URL
+ENV VITE_SERVICES_URL=$VITE_SERVICES_URL
+COPY docker/default.conf.template /etc/nginx/site.conf.template
+COPY --chmod=755 docker/40-site-config.sh /docker-entrypoint.d/40-site-config.sh
 COPY --from=build /app/build/client /usr/share/nginx/html
 EXPOSE 8080

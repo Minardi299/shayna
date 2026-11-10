@@ -94,7 +94,7 @@ export function loader() {
   )
 }
 
-// /api/menu is proxied to the menu API by nginx (prod) and Vite (dev); the API has no CORS headers.
+// /api/menu is proxied to VITE_SERVICES_URL by nginx (Docker) and Vite (dev); the API has no CORS headers.
 export async function clientLoader({
   serverLoader,
 }: {
